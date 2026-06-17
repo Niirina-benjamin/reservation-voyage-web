@@ -21,3 +21,26 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Serveur démarré sur le port ${PORT}`);
 });
+
+
+const authRoutes =
+require('./routes/authRoutes');
+
+app.use('/api/auth', authRoutes);
+
+// Routes protégé 
+const authMiddleware =
+require('./middleware/authMiddleware');
+
+app.get(
+    '/api/profile',
+    authMiddleware,
+    (req, res) => {
+
+        res.json({
+            message: 'Accès autorisé',
+            user: req.user
+        });
+
+    }
+);
