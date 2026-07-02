@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageExpress | Réservation de Voyage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Notre feuille de style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-bus-front-fill me-2"></i>
+                VoyageExpress
+            </a>
+            <!-- Bouton mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Afficher le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <!-- Menu principal -->
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Trajets
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            À propos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+                <!-- Boutons -->
+                <div class="d-flex">
+                    <a href="pages/login.html" class="btn btn-outline-light me-2">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>
+                        Connexion
+                    </a>
+                    <a href="pages/register.html" class="btn btn-warning">
+                        <i class="bi bi-person-plus-fill me-1"></i>
+                        Inscription
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- ========================= -->
+    <!-- Hero Section -->
+    <!-- ========================= -->
+    <section class="hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Partie gauche -->
+                <div class="col-lg-6">
+                    <span class="badge bg-warning text-dark mb-3">
+                        Plateforme de réservation en ligne
+                    </span>
+                    <h1 class="display-4 fw-bold mb-4">
+                        Réservez votre voyage
+                        <span class="text-primary">facilement</span>
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        VoyageExpress vous permet de rechercher
+                        un trajet, choisir votre siège et confirmer
+                        votre réservation en quelques clics.
+                    </p>
+                    <div class="mb-4">
+                        <a href="#search" class="btn btn-primary btn-lg me-3">
+                            <i class="bi bi-search me-2"></i>
+                            Réserver maintenant
+                        </a>
+                        <a href="#destinations" class="btn btn-outline-primary btn-lg">
+                            Voir les trajets
+                        </a>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-6 mb-3">
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                            Réservation rapide
+                        </div>
+                        <div class="col-6 mb-3">
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                            Choix du siège
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                            Paiement sécurisé
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                            Support 24h/24
+                        </div>
+                    </div>
+                </div>
+                <!-- Partie droite -->
+                <div class="col-lg-6 text-center">
+                    <img src="assets/images/bus-hero.png" class="img-fluid" alt="Bus de voyage">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- Recherche de trajet -->
+    <!-- ========================= -->
+    <section id="search" class="py-5 bg-light">
+        <div class="container">
+            <!-- Titre -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">
+                    Rechercher un trajet
+                </h2>
+                <p class="text-muted">
+                    Trouvez rapidement un voyage selon votre destination.
+                </p>
+            </div>
+            <!-- Formulaire -->
+            <div class="card shadow border-0">
+                <div class="card-body p-4">
+                    <form id="searchForm">
+                        <div class="row g-3">
+                            <!-- Départ -->
+                            <div class="col-md-3">
+                                <label class="form-label">
+                                    Ville de départ
+                                </label>
+                                <select id="departure" class="form-select">
+                                    <option value="">
+                                        Choisir
+                                    </option>
+                                    <option>
+                                        Antananarivo
+                                    </option>
+                                    <option>
+                                        Toamasina
+                                    </option>
+                                    <option>
+                                        Mahajanga
+                                    </option>
+                                    <option>
+                                        Fianarantsoa
+                                    </option>
+                                </select>
+                            </div>
+                            <!-- Destination -->
+                            <div class="col-md-3">
+                                <label class="form-label">
+                                    Destination
+                                </label>
+                                <select id="destination" class="form-select">
+                                    <option value="">
+                                        Choisir
+                                    </option>
+                                    <option>
+                                        Antananarivo
+                                    </option>
+                                    <option>
+                                        Toamasina
+                                    </option>
+                                    <option>
+                                        Mahajanga
+                                    </option>
+                                    <option>
+                                        Fianarantsoa
+                                    </option>
+                                </select>
+                            </div>
+                            <!-- Date -->
+                            <div class="col-md-3">
+                                <label class="form-label">
+                                    Date du voyage
+                                </label>
+                                <input type="date" id="travelDate" class="form-control">
+                            </div>
+                            <!-- Passagers -->
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Passagers
+                                </label>
+                                <input type="number" id="passengers" class="form-control" value="1" min="1" max="10">
+                            </div>
+                            <!-- Bouton -->
+                            <div class="col-md-1 d-grid align-self-end">
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- Nos Services -->
+    <!-- ========================= -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">
+                    Nos Services
+                </h2>
+                <p class="text-muted">
+                    Découvrez toutes les fonctionnalités de notre plateforme.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <i class="bi bi-bus-front display-4 text-primary mb-3"></i>
+                        <h4>Réservation</h4>
+                        <p class="text-muted">
+                            Réservez votre voyage rapidement
+                            selon votre destination.
+                        </p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <i class="bi bi-person-check display-4 text-success mb-3"></i>
+                        <h4>Compte Client</h4>
+                        <p class="text-muted">
+                            Gérez facilement votre compte
+                            et vos informations personnelles.
+                        </p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <i class="bi bi-grid-fill display-4 text-warning mb-3"></i>
+                        <h4>Choix du siège</h4>
+                        <p class="text-muted">
+                            Sélectionnez votre siège
+                            avant le départ.
+                        </p>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <i class="bi bi-clock-history display-4 text-danger mb-3"></i>
+                        <h4>Historique</h4>
+                        <p class="text-muted">
+                            Consultez toutes vos
+                            réservations précédentes.
+                        </p>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <i class="bi bi-shield-lock display-4 text-info mb-3"></i>
+                        <h4>Sécurité</h4>
+                        <p class="text-muted">
+                            Vos données sont protégées
+                            grâce à une authentification sécurisée.
+                        </p>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <i class="bi bi-phone display-4 text-secondary mb-3"></i>
+                        <h4>Responsive</h4>
+                        <p class="text-muted">
+                            Utilisez l'application
+                            sur ordinateur, tablette et mobile.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- Pourquoi nous choisir -->
+    <!-- ========================= -->
+    <section id="why-us" class="py-5 bg-light">
+        <div class="container">
+            <!-- Titre -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">
+                    Pourquoi choisir VoyageExpress ?
+                </h2>
+                <p class="text-muted">
+                    Nous mettons tout en œuvre pour rendre vos déplacements
+                    simples, rapides et agréables.
+                </p>
+            </div>
+            <div class="row align-items-center">
+                <!-- Image -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="assets/images/why-us.png" class="img-fluid rounded" alt="Pourquoi nous choisir">
+                </div>
+                <!-- Contenu -->
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="bi bi-lightning-charge-fill text-warning fs-1"></i>
+                                </div>
+                                <div>
+                                    <h5>Réservation rapide</h5>
+                                    <p class="text-muted">
+                                        Réservez votre trajet en moins de deux minutes grâce à une interface simple et
+                                        intuitive.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="bi bi-shield-check text-success fs-1"></i>
+                                </div>
+                                <div>
+                                    <h5>Service fiable</h5>
+                                    <p class="text-muted">
+                                        Toutes vos réservations sont enregistrées de manière sécurisée.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="bi bi-geo-alt-fill text-danger fs-1"></i>
+                                </div>
+                                <div>
+                                    <h5>Plusieurs destinations</h5>
+                                    <p class="text-muted">
+                                        Voyagez facilement entre les principales villes de Madagascar.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="bi bi-headset text-primary fs-1"></i>
+                                </div>
+                                <div>
+                                    <h5>Support disponible</h5>
+                                    <p class="text-muted">
+                                        Notre équipe est disponible pour vous accompagner à chaque étape.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- Destinations populaires -->
+    <!-- ========================= -->
+    <section id="destinations" class="py-5">
+        <div class="container">
+            <!-- Titre -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">
+                    Destinations Populaires
+                </h2>
+                <p class="text-muted">
+                    Découvrez les trajets les plus réservés par nos voyageurs.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Destination 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card destination-card shadow-sm border-0 h-100">
+                        <img src="assets/images/toamasina.jpg" class="card-img-top" alt="Antananarivo vers Toamasina">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Antananarivo → Toamasina
+                            </h5>
+                            <p class="text-muted">
+                                Départ quotidien à 08h00
+                            </p>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="fw-bold text-primary">
+                                    50 000 Ar
+                                </span>
+                                <span>
+                                    ⭐ 4.8
+                                </span>
+                            </div>
+                            <a href="pages/login.html" class="btn btn-primary w-100">
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Destination 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card destination-card shadow-sm border-0 h-100">
+                        <img src="assets/images/mahajanga.jpg" class="card-img-top" alt="Antananarivo vers Mahajanga">
+                        <div class="card-body">
+                            <h5>
+                                Antananarivo → Mahajanga
+                            </h5>
+                            <p class="text-muted">
+                                Départ quotidien à 07h30
+                            </p>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="fw-bold text-primary">
+                                    65 000 Ar
+                                </span>
+                                <span>
+                                    ⭐ 4.7
+                                </span>
+                            </div>
+                            <a href="pages/login.html" class="btn btn-primary w-100">
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Destination 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card destination-card shadow-sm border-0 h-100">
+                        <img src="assets/images/fianarantsoa.jpg" class="card-img-top"
+                            alt="Antananarivo vers Fianarantsoa">
+                        <div class="card-body">
+                            <h5>
+                                Antananarivo → Fianarantsoa
+                            </h5>
+                            <p class="text-muted">
+                                Départ quotidien à 09h00
+                            </p>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="fw-bold text-primary">
+                                    45 000 Ar
+                                </span>
+                                <span>
+                                    ⭐ 4.9
+                                </span>
+                            </div>
+                            <a href="pages/login.html" class="btn btn-primary w-100">
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- Témoignages -->
+    <!-- ========================= -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <!-- Titre -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">
+                    Ce que disent nos voyageurs
+                </h2>
+                <p class="text-muted">
+                    Plus de 10 000 voyageurs nous font confiance à travers Madagascar.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Témoignage 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <img src="assets/images/user1.jpg" class="rounded-circle mb-3" width="90" height="90"
+                                alt="Client">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-muted fst-italic">
+                                "La réservation est très simple et rapide.
+                                J'ai pu choisir mon siège en quelques minutes."
+                            </p>
+                            <h5 class="mb-1">
+                                Nirina Benjamin
+                            </h5>
+                            <small class="text-secondary">
+                                Antananarivo
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Témoignage 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <img src="assets/images/user2.jpg" class="rounded-circle mb-3" width="90" height="90"
+                                alt="Client">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-muted fst-italic">
+                                "Interface très agréable.
+                                Le personnel est accueillant et le voyage confortable."
+                            </p>
+                            <h5 class="mb-1">
+                                Rakoto Andry
+                            </h5>
+                            <small class="text-secondary">
+                                Toamasina
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Témoignage 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <img src="assets/images/user3.jpg" class="rounded-circle mb-3" width="90" height="90"
+                                alt="Client">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-muted fst-italic">
+                                "Je recommande cette plateforme.
+                                La réservation en ligne est vraiment pratique."
+                            </p>
+                            <h5 class="mb-1">
+                                Sarah Ranaivo
+                            </h5>
+                            <small class="text-secondary">
+                                Mahajanga
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- Call To Action -->
+    <!-- ========================= -->
+    <section class="cta-section py-5 text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-3">
+                        Prêt à réserver votre prochain voyage ?
+                    </h2>
+                    <p class="lead mb-4">
+                        Rejoignez des milliers de voyageurs qui utilisent
+                        VoyageExpress pour réserver leurs trajets
+                        rapidement et en toute sécurité.
+                    </p>
+                    <a href="pages/register.html" class="btn btn-warning btn-lg me-3">
+                        <i class="bi bi-person-plus-fill me-2"></i>
+                        Créer un compte
+                    </a>
+                    <a href="#search" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-search me-2"></i>
+                        Réserver maintenant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-lg-4 mb-4">
+                    <h3 class="fw-bold text-primary">
+                        <i class="bi bi-bus-front-fill me-2"></i>
+                        VoyageExpress
+                    </h3>
+                    <p class="text-muted">
+                        Votre plateforme de réservation de voyage
+                        simple, rapide et sécurisée.
+                    </p>
+                </div>
+                <!-- Liens -->
+                <div class="col-lg-2 mb-4">
+                    <h5>
+                        Navigation
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#destinations">
+                                Destinations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages/login.html">
+                                Connexion
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages/register.html">
+                                Inscription
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div class="col-lg-3 mb-4">
+                    <h5>
+                        Contact
+                    </h5>
+                    <p>
+                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                        Antananarivo, Madagascar
+                    </p>
+                    <p>
+                        <i class="bi bi-telephone-fill text-success"></i>
+                        +261 34 00 000 00
+                    </p>
+                    <p>
+                        <i class="bi bi-envelope-fill text-primary"></i>
+                        contact@voyageexpress.mg
+                    </p>
+                </div>
+                <!-- Réseaux -->
+                <div class="col-lg-3">
+                    <h5>
+                        Suivez-nous
+                    </h5>
+                    <a href="#" class="social">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="social">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="social">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="social">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                © 2026 VoyageExpress — Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

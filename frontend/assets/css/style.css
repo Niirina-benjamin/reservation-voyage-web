@@ -1,0 +1,294 @@
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
+}
+
+.hero h1 {
+    line-height: 1.2;
+}
+
+.hero img {
+    max-width: 90%;
+}
+
+/* ==========================
+   Recherche de trajet
+========================== */
+
+#search {
+    margin-top: -40px;
+    position: relative;
+    z-index: 10;
+}
+
+#search .card {
+    border-radius: 20px;
+}
+
+#search .form-control,
+#search .form-select {
+    height: 55px;
+}
+
+#search button {
+    height: 55px;
+}
+
+/* ==========================
+   Services
+========================== */
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card i {
+    transition: transform 0.3s ease;
+}
+
+.card:hover i {
+    transform: scale(1.2);
+}
+
+/* ==========================
+   Pourquoi nous choisir
+========================== */
+
+#why-us i {
+    transition: all .3s ease;
+}
+
+#why-us .d-flex:hover i {
+    transform: rotate(-8deg) scale(1.15);
+}
+
+#why-us h5 {
+    font-weight: 600;
+}
+
+#why-us img {
+    border-radius: 20px;
+}
+
+/* ==========================
+   Destinations populaires
+========================== */
+
+.destination-card {
+    overflow: hidden;
+    transition: all .3s ease;
+    border-radius: 15px;
+}
+
+.destination-card img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.destination-card:hover img {
+    transform: scale(1.08);
+}
+
+.destination-card .btn {
+    border-radius: 10px;
+}
+
+/* ==========================
+   Témoignages
+========================== */
+
+.testimonial-card{
+    border-radius:20px;
+    transition:.3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.testimonial-card img{
+    object-fit:cover;
+    border:4px solid #0d6efd;
+}
+
+.testimonial-card p{
+    min-height:90px;
+}
+
+.testimonial-card .text-warning{
+    font-size:1.1rem;
+}
+
+/* ==========================
+   Call To Action
+========================== */
+
+.cta-section{
+
+    background:linear-gradient(135deg,#0d6efd,#084298);
+
+}
+
+.cta-section .btn{
+
+    border-radius:12px;
+    padding:12px 30px;
+
+}
+
+.cta-section h2{
+
+    font-size:2.4rem;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.footer{
+
+    background:#f8f9fa;
+
+}
+
+.footer a{
+
+    color:#555;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.footer a:hover{
+
+    color:#0d6efd;
+
+}
+
+.footer ul li{
+
+    margin-bottom:10px;
+
+}
+
+.social{
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    margin-right:10px;
+
+    font-size:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.social:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ==========================
+   Login
+========================== */
+
+.login-section{
+
+min-height:90vh;
+
+display:flex;
+
+align-items:center;
+
+background:#f8f9fa;
+
+}
+
+.login-section .card{
+
+border-radius:20px;
+
+}
+
+.login-section .form-control{
+
+height:50px;
+
+}
+
+.login-section .input-group-text{
+
+background:#fff;
+
+}
+
+.login-section img{
+
+max-width:80%;
+
+}
+
+/* ==========================
+   Register
+========================== */
+
+.register-section{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:#f8f9fa;
+
+}
+
+.register-section .card{
+
+    border-radius:20px;
+
+}
+
+.register-section .form-control{
+
+    height:50px;
+
+}
+
+.register-section img{
+
+    max-width:80%;
+
+}
+
+.register-section .input-group-text{
+
+    background:#fff;
+
+}
